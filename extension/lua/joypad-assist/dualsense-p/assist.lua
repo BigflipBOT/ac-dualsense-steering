@@ -23,10 +23,10 @@ function script.update(dt)
     local ds = ac.getDualSense(state.gamepadIndex)
 
     -- ###Adding gyroscope to steering
-    if ScriptSettings.GYROSCOPE then
-      gyroSmooth = math.applyLag(gyroSmooth, state.ffb * 0.05 + ds.gyroscope.x * math.lerp(0.2, 1.5, math.lerpInvSat(ds.gyroscope.z, 0.1, -0.3)), 0.8, dt)
-      state.steer = math.clampN(state.steer - gyroSmooth * math.lerpInvSat(state.speedKmh, 1, 5), -1, 1)
-    end
+    -- if ScriptSettings.GYROSCOPE then
+    --  gyroSmooth = math.applyLag(gyroSmooth, state.ffb * 0.05 + ds.gyroscope.x * math.lerp(0.2, 1.5, math.lerpInvSat(ds.gyroscope.z, 0.1, -0.3)), 0.8, dt)
+    --  state.steer = math.clampN(state.steer - gyroSmooth * math.lerpInvSat(state.speedKmh, 1, 5), -1, 1)
+    -- end
 
     -- ### Gamepad vibrations
 
